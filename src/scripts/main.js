@@ -1,29 +1,44 @@
 console.log("Welcome to the main module")
 
 import { createPlan } from "./plan.js"
+import { createAsparagus } from "./seeds/asparagus.js"
+import { createCorn } from "./seeds/corn.js"
+import { addPlant, usePlants } from "./field.js"
+import { plantSeeds } from "./tractor.js"
+import { harvestPlants } from "./harvester.js"
+import { catalog } from "./catalog.js"
+
 const yearlyPlan = createPlan()
 console.log(yearlyPlan)
 
+// const asparagusSeed = createAsparagus()
+// console.log(asparagusSeed)
 
-import { createAsparagus } from "./seeds/asparagus.js"
-const asparagusSeed = createAsparagus("Asparagus", 24, 4)
-console.log(asparagusSeed)
-
-
-import { createCorn } from "./seeds/corn.js"
-const cornSeed = createCorn("Corn", 180, 6)
-console.log(cornSeed)
+// const cornSeed = createCorn()
+// console.log(cornSeed)
 
 
-import { addPlant, usePlants } from "./field.js"
- const usingPlants = usePlants()
- console.log(usingPlants)
+const useThesePlants = usePlants()
+console.log(useThesePlants)
+
+ 
+plantSeeds()
+//console.log(newSeedsToPlant)
 
 
- import { plantSeeds } from "./tractor.js"
-import { createPotato } from "./seeds/potato.js"
- const plantedSeeds = plantSeeds()
- console.log(plantedSeeds)
+
+ const finalHarvestOfPlants = harvestPlants(useThesePlants)
+ console.log(finalHarvestOfPlants) 
+
+ const catalogFood = catalog(finalHarvestOfPlants)
+// for (const FoodSelection of catalogFood) {console.log(FoodSelection)}
+
+const parentHTMLElement = document.querySelector(".container")
+
+parentHTMLElement.innerHTML = catalogFood
+// import { createPotato } from "./seeds/potato.js"
+//  const plantedSeeds = plantSeeds()
+//  console.log(plantedSeeds)
 
  
 
