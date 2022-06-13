@@ -30,12 +30,12 @@ plantSeeds()
  const finalHarvestOfPlants = harvestPlants(useThesePlants)
  console.log(finalHarvestOfPlants) 
 
- const catalogFood = catalog(finalHarvestOfPlants)
+ //const catalogFood = catalog()
 // for (const FoodSelection of catalogFood) {console.log(FoodSelection)}
 
 const parentHTMLElement = document.querySelector(".container")
 
-parentHTMLElement.innerHTML = catalogFood
+parentHTMLElement.innerHTML = catalog(finalHarvestOfPlants)
 // import { createPotato } from "./seeds/potato.js"
 //  const plantedSeeds = plantSeeds()
 //  console.log(plantedSeeds)
